@@ -37,7 +37,10 @@ function App() {
         </GoogleMap>
         <h3>
           Source:{' '}
-          <a href="https://bringmethenews.com/minnesota-news/a-list-of-the-buildings-damaged-looted-in-minneapolis-riots">
+          <a
+            href="https://bringmethenews.com/minnesota-news/a-list-of-the-buildings-damaged-looted-in-minneapolis-riots"
+            rel="noopener noreferrer"
+          >
             https://bringmethenews.com/minnesota-news/a-list-of-the-buildings-damaged-looted-in-minneapolis-riots
           </a>
         </h3>
