@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import _get from 'lodash/get';
 import places from './places.json';
 import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
+import './index.css';
 
 const MAPS_KEY = process.env['REACT_APP_MAPS_KEY'];
 
@@ -29,17 +30,17 @@ function App() {
   return (
     <LoadScript googleMapsApiKey={MAPS_KEY} libraries={['places']}>
       <Flex>
+        <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={12}>
+          {places.map((place, index) => (
+            <Location place={place} key={index} />
+          ))}
+        </GoogleMap>
         <h3>
           Source:{' '}
           <a href="https://bringmethenews.com/minnesota-news/a-list-of-the-buildings-damaged-looted-in-minneapolis-riots">
             https://bringmethenews.com/minnesota-news/a-list-of-the-buildings-damaged-looted-in-minneapolis-riots
           </a>
         </h3>
-        <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={12}>
-          {places.map((place, index) => (
-            <Location place={place} key={index} />
-          ))}
-        </GoogleMap>
       </Flex>
     </LoadScript>
   );
